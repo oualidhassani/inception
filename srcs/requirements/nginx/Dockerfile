@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:stable
 
 RUN apt update -y && apt upgrade -y && \
     apt install -y nginx openssl
@@ -15,7 +15,7 @@ RUN mkdir -p /var/www/wordpress /var/run/nginx && \
     chown -R www-data:www-data /var/www/wordpress
 
 
-# COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY default /etc/nginx/sites-available/.
 
 
 CMD nginx -g "daemon off;"
