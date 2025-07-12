@@ -15,7 +15,6 @@ RUN mkdir -p /var/www/wordpress /var/run/nginx && \
     chown -R www-data:www-data /var/www/wordpress
 
 
-COPY default /etc/nginx/sites-available/.
-
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 CMD nginx -g "daemon off;"

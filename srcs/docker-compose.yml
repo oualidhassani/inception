@@ -18,7 +18,7 @@ services:
     networks: 
     - inception
     ports:
-      - "433:433"
+      - "443:443"
     depends_on: 
     - wordpress
     volumes: 
@@ -27,13 +27,15 @@ services:
   wordpress:
     build: requirements/wordpress/.
     env_file: .env
-    container_name: wp-php
+    container_name: wordpress
     depends_on:
     - mariadb
     networks:
     - inception
     volumes: 
       - wordpress:/var/www/wordpress
+    expose: 
+      - "9000"
     
 
 volumes:
