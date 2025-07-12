@@ -5,7 +5,6 @@ services:
     container_name: mariadb
     networks: 
     - inception
-    image: mariadb
     volumes: 
     - mariadb:/var/lib/mysql
     restart: always
@@ -36,8 +35,6 @@ services:
       - wordpress:/var/www/wordpress
     expose: 
       - "9000"
-    
-
 volumes:
   mariadb:
     driver: local
@@ -53,4 +50,6 @@ volumes:
       o: bind
 networks:
   inception:
+    name: inception
+    driver: bridge
   # drive is bridge by default 
