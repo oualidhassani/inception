@@ -52,4 +52,4 @@ fi
 
 mkdir -p /run/php
 echo "Starting PHP-FPM..."
-php-fpm7.4 -F
+php-fpm8.2 -F
