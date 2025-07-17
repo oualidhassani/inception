@@ -1,6 +1,6 @@
 FROM debian:stable
 
-RUN apt update -y && apt upgrade && \
+RUN apt update -y && apt upgrade -y && \
 apt install -y mariadb-server && \
 apt clean && rm -rf /var/lib/apt/lists/*
 
